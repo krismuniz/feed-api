@@ -1,0 +1,45 @@
+{
+  "name": "feed-api",
+  "version": "1.0.0",
+  "description": "A simple, ready-to-use microservice for parsing RSS feeds, optimizing each item using metadata and converting them to JSONFeed format",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "date-fns": "^1.28.5",
+    "express": "^4.15.3",
+    "html-to-text": "^3.3.0",
+    "is-absolute-url": "^2.1.0",
+    "memory-cache": "^0.2.0",
+    "metascraper": "^1.0.7",
+    "request-promise-native": "^1.0.4",
+    "rss-parser": "^2.10.1"
+  },
+  "engines": {
+    "node": "8.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/krismuniz/feed-api.git"
+  },
+  "author": "Kristian Muñiz <contact@krismuniz.com> (http://www.krismuniz.com)",
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express",
+    "rss",
+    "feed",
+    "news",
+    "Google News"
+  ],
+  "devDependencies": {
+    "eslint": "4.3.0",
+    "eslint-config-standard": "10.2.1",
+    "eslint-plugin-import": "2.7.0",
+    "eslint-plugin-node": "5.1.1",
+    "eslint-plugin-promise": "3.5.0",
+    "eslint-plugin-standard": "3.0.1"
+  }
+}

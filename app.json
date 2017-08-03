@@ -1,0 +1,7 @@
+{
+  "name": "FeedAPI",
+  "description": "A simple, ready-to-use microservice for parsing RSS feeds, optimizing each item using metadata and converting them to JSONFeed format",
+  "logo": "https://cdn.rawgit.com/krismuniz/feed-api/master/assets/logo.png",
+  "repository": "https://github.com/krismuniz/feed-api.git",
+  "keywords": ["node", "express", "rss", "json", "jsonfeed", "microservice", "api"]
+}
