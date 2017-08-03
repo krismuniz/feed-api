@@ -4,12 +4,19 @@ const app = express()
 const cache = require('./middleware/cache')
 const fetchFeed = require('./libraries/fetch-feed')
 
+app.disable('x-powered-by')
+
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*')
+  res.setHeader('Content-Type', 'application/json')
+  res.setHeader('X-Powered-By', 'FeedAPI')
   next()
 })
 
 app.get('/', cache(process.env.CACHE_MAX_AGE || 1800), async (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*')
+  res.setHeader('Content-Type', 'application/json')
+
   if (req.query.url) {
     try {
       res.send(
@@ -25,6 +32,10 @@ app.get('/', cache(process.env.CACHE_MAX_AGE || 1800), async (req, res) => {
       error: 'No query parameter `url` provided'
     })
   }
+})
+
+app.get('*', (req, res) => {
+  res.status(404).send({ error: '404 – NOT FOUND' })
 })
 
 const listener = app.listen(process.env.PORT || 3000, function () {

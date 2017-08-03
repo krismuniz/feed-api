@@ -45,7 +45,7 @@ module.exports = (feed, limit = 10) => {
                 const contentText = ogDescription || item.description
 
                 return {
-                  id: item.guid || typeof item.id === 'string' ? item.id : item.link,
+                  id: item.id || item.guid || item.link,
                   url: item.link,
                   title: item.title,
                   content_text: stripHTML(contentText),
