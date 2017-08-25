@@ -26,25 +26,25 @@ A successfully-parsed rss feed will result in a `feed` object with the following
 
 ```json
 {
-  "version":"https://jsonfeed.org/version/1",
-  "title":"String(free-text)",
-  "homepage_url":"String(url)",
-  "feed_url":"String(url)",
-  "description":"String(free-text)",
+  "version": "https://jsonfeed.org/version/1",
+  "title": "String (free-text)",
+  "homepage_url": "String (url)",
+  "feed_url": "String (url)",
+  "description": "String (free-text)",
   "author": {
-    "name": "String(free-text)",
-    "url": "String(url)"
+    "name": "String (free-text)",
+    "url": "String (url)"
   },
   "items": [
     {
-      "url":"String(url)",
-      "title":"String(free-text)",
-      "content_text":"String(free-text)",
-      "image":"String(url)",
-      "date_published":"String(date-format:rfc3339)",
+      "url": "String (url)",
+      "title": "String (free-text)",
+      "content_text": "String (free-text)",
+      "image": "String (url)",
+      "date_published": "String (date-format:rfc3339)",
       "author":{  
-        "name":"String(free-text)",
-        "url":"String(url)"
+        "name": "String (free-text)",
+        "url": "String (url)"
       }
     }
   ]
