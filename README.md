@@ -1,4 +1,4 @@
-# [![FeedAPI](https://cdn.rawgit.com/krismuniz/feed-api/2647dbf0/assets/header.svg)](https://www.github.com/krismuniz/feed-api)
+# [![FeedAPI](/assets/header.svg)](https://www.github.com/krismuniz/feed-api)
 
 [![Code-Style:Standard](https://img.shields.io/badge/code%20style-standard-green.svg?style=flat-square)](http://standardjs.com/) [![License:MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 
@@ -6,7 +6,7 @@
 
 #### How it works
 
-[![Infographic: How FeedAPI works](https://cdn.rawgit.com/krismuniz/feed-api/2647dbf0/assets/how-it-works.svg)](https://www.github.com/krismuniz/feed-api)
+[![Infographic: How FeedAPI works](/assets/how-it-works.svg)](https://www.github.com/krismuniz/feed-api)
 
 FeedAPI takes an RSS Feed link, parses it, scrapes and collects [OpenGraph](http://ogp.me/) and [`<meta/>` tags](https://developer.mozilla.org/en/docs/Web/HTML/Element/meta) data from each item to ensure all items have all the data necessary in the proper format, and finally it presents the results in a minimal, developer-friendly format, [JSONFeed](https://jsonfeed.org).
 

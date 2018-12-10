@@ -2,6 +2,7 @@ const url = require('url')
 const isAbsoluteUrl = require('is-absolute-url')
 const htmlToText = require('html-to-text')
 const formatDate = require('date-fns/format')
+const request = require('request-promise-native')
 
 const stripHTML = (string) => htmlToText.fromString(string, { ignoreImage: true }).trim()
 
@@ -19,7 +20,17 @@ const getBase = (s) => {
   return (protocol && host) ? protocol + '//' + host : undefined
 }
 
-const { scrapeUrl } = require('metascraper')
+const metascraper = require('metascraper')([
+  require('metascraper-author')(),
+  require('metascraper-date')(),
+  require('metascraper-description')(),
+  require('metascraper-image')(),
+  require('metascraper-logo')(),
+  require('metascraper-clearbit-logo')(),
+  require('metascraper-publisher')(),
+  require('metascraper-title')(),
+  require('metascraper-url')()
+])
 
 /*
   crawls each url for better metadata if available
@@ -27,9 +38,13 @@ const { scrapeUrl } = require('metascraper')
 module.exports = (feed, limit = 10) => {
   try {
     return Promise.all(
-      feed.items.slice(0, limit).map((item) => {
-        if (item.link) {
-          return scrapeUrl(item.link).then(
+      feed.items.slice(0, limit).map(async (item) => {
+        if (!item.link) return false
+
+        try {
+          const html = await request(item.link)
+
+          return metascraper({ html, url: item.link }).then(
             function success (result) {
               if (item && result) {
                 const ogImage = result.image
@@ -59,13 +74,10 @@ module.exports = (feed, limit = 10) => {
               } else {
                 return false
               }
-            },
-            function failure (error) {
-              console.log('Error with parsing OpenGraph data: ', error)
-              return false
             }
           )
-        } else {
+        } catch (e) {
+          console.log('Error with parsing OpenGraph data: ', e)
           return false
         }
       })

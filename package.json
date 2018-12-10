@@ -1,20 +1,30 @@
 {
   "name": "feed-api",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A simple, ready-to-use microservice for parsing RSS feeds, optimizing each item using metadata and converting them to JSONFeed format",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
-    "date-fns": "^1.28.5",
-    "express": "^4.15.3",
+    "date-fns": "^1.29.0",
+    "express": "^4.16.4",
     "html-to-text": "^3.3.0",
     "is-absolute-url": "^2.1.0",
     "memory-cache": "^0.2.0",
-    "metascraper": "^1.0.7",
-    "request-promise-native": "^1.0.4",
-    "rss-parser": "^2.10.1"
+    "metascraper": "^4.7.0",
+    "metascraper-author": "^4.7.0",
+    "metascraper-clearbit-logo": "^4.7.0",
+    "metascraper-date": "^4.7.0",
+    "metascraper-description": "^4.7.0",
+    "metascraper-image": "^4.7.0",
+    "metascraper-logo": "^4.7.0",
+    "metascraper-publisher": "^4.7.0",
+    "metascraper-title": "^4.7.0",
+    "metascraper-url": "^4.7.0",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.5",
+    "rss-parser": "^2.12.1"
   },
   "engines": {
     "node": "8.x"
@@ -37,7 +47,7 @@
   "devDependencies": {
     "eslint": "4.3.0",
     "eslint-config-standard": "10.2.1",
-    "eslint-plugin-import": "2.7.0",
+    "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-node": "5.1.1",
     "eslint-plugin-promise": "3.5.0",
     "eslint-plugin-standard": "3.0.1"
